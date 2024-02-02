@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<sdf version = '1.5'>
+    <model name = "IfcWindow_2y16PNiQDAUu6vtOChEdGM">
+        <static>True</static>
+        <self_collide>True</self_collide>
+        <enable_wind>True</enable_wind>
+        <pose>0 0 0 0 0 0</pose>
+
+        <link name = 'IfcWindow'>
+            <inertial>
+                <mass>1</mass>
+            </inertial>
+
+            <collision name='collision'>
+                <geometry>
+                    <mesh>
+                        <uri>model://IfcWindow_2y16PNiQDAUu6vtOChEdGM//meshes//IfcWindow_2y16PNiQDAUu6vtOChEdGM.dae</uri>
+                    </mesh>
+                </geometry>
+            </collision>
+
+            <visual name='visual'>
+                <geometry>
+                    <mesh>
+                        <uri>model://IfcWindow_2y16PNiQDAUu6vtOChEdGM//meshes//IfcWindow_2y16PNiQDAUu6vtOChEdGM.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+        </link>
+    </model>
+</sdf>

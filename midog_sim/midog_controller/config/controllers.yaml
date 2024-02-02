@@ -1,0 +1,47 @@
+midog:
+  
+  joint_states_controller:
+      type: joint_state_controller/JointStateController
+      publish_rate: 30
+
+  left_back_knee_joint_controller:
+      type: effort_controllers/JointPositionController
+      joint: left_back_knee_joint
+      pid: {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+        
+  left_back_shoulder_joint_controller:
+      type: effort_controllers/JointPositionController
+      joint: left_back_shoulder_joint
+      pid: {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+        
+  left_front_knee_joint_controller:
+      type: effort_controllers/JointPositionController
+      joint: left_front_knee_joint
+      pid: {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+
+  left_front_shoulder_joint_controller:
+      type: effort_controllers/JointPositionController
+      joint: left_front_shoulder_joint
+      pid: {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+        
+  right_back_knee_joint_controller:
+      type: effort_controllers/JointPositionController
+      joint: right_back_knee_joint
+      pid: {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+        
+  right_back_shoulder_joint_controller:
+      type: effort_controllers/JointPositionController
+      joint: right_back_shoulder_joint
+      pid: {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+
+  right_front_knee_joint_controller:
+      type: effort_controllers/JointPositionController
+      joint: right_front_knee_joint
+      pid: {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+        
+  right_front_shoulder_joint_controller:
+      type: effort_controllers/JointPositionController
+      joint: right_front_shoulder_joint
+      pid: {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+        
+ 

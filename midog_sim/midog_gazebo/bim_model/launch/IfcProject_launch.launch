@@ -1,0 +1,30 @@
+<launch>
+
+  <env name="GAZEBO_MODEL_PATH" value="$(find midog_gazebo)/bim_model/models"/>
+  <arg name ="extra_gazebo_args" default="--verbose"/>
+
+  <!-- BIM model -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find midog_gazebo)/bim_model/worlds/IfcSite_3LKoMPPl98lfEOav7asGI1.world"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name ="extra_gazebo_args" value="$(arg extra_gazebo_args)"/>
+  </include>
+
+  <!-- Robot--> 
+  <arg name="robot" default="$(find midog_description)/urdf/midog.urdf"/>
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg robot)" />
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -x 20 -y 16 -z 1 -model midog_gazebo"/>
+  
+    <!-- Controllers -->
+  <rosparam file="$(find midog_controller)/config/controllers.yaml" command="load"/>
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" output="screen" ns="/midog"
+        args="left_back_knee_joint_controller left_back_shoulder_joint_controller left_front_knee_joint_controller left_front_shoulder_joint_controller right_back_knee_joint_controller right_back_shoulder_joint_controller right_front_knee_joint_controller right_front_shoulder_joint_controller"/>
+
+  <!-- Robot State Publisher -->
+  <node pkg="robot_state_publisher" type="robot_state_publisher"  name="robot_state_publisher" respawn="false" output="screen">
+    <remap from="/joint_states" to="/midog_gazebo/joint_states" />
+    <param name="publish_frequency" type="double" value="10" />
+  </node>
+
+	
+</launch>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <authoring_tool>IfcOpenShell v0.7.0-f0e03c79d</authoring_tool>
+    </contributor>
+    <created>2023-11-09T15:48:36</created>
+    <modified>2023-11-09T15:48:36</modified>
+    <unit name="METER" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="IfcWall-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <diffuse>
+              <color>0.9 0.9 0.9 1</color>
+            </diffuse>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="IfcWall">
+      <instance_effect url="#IfcWall-fx"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="representation-1306">
+      <mesh>
+        <source id="representation-1306-positions">
+          <float_array id="representation-1306-positions-array" count="90">0 -0.09999999999999731 0 0 -0.09999999999999731 3.1 8.597327345159634 -0.09999999999999731 0 8.597327345159634 -0.09999999999999731 3.1 0 0.1000000000000004 0 0.1999999999999978 0.1000000000000008 0 0 0.1000000000000004 3.1 0.1999999999999978 0.1000000000000008 3.1 8.597327345159634 0.1000000000000005 3.1 8.597327345159634 0.1000000000000005 0 8.597327345159634 -0.09999999999999731 0 8.597327345159639 0.009904460520484326 0 0 -0.09999999999999731 0 0 0.1000000000000004 0 0.1999999999999978 0.1000000000000008 0 8.597327345159634 0.1000000000000005 0 8.597327345159634 -0.09999999999999731 3.1 8.597327345159634 0.1000000000000005 3.1 8.597327345159634 -0.09999999999999731 0 8.597327345159639 0.009904460520484326 0 8.597327345159634 0.1000000000000005 0 0 -0.09999999999999731 0 0 0.1000000000000004 0 0 -0.09999999999999731 3.1 0 0.1000000000000004 3.1 0 -0.09999999999999731 3.1 0 0.1000000000000004 3.1 8.597327345159634 -0.09999999999999731 3.1 8.597327345159634 0.1000000000000005 3.1 0.1999999999999978 0.1000000000000008 3.1</float_array>
+          <technique_common>
+            <accessor source="#representation-1306-positions-array" count="30" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="representation-1306-normals">
+          <float_array id="representation-1306-normals-array" count="90">0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 0 -1.08498301749423e-15 1 0 -1.08498301749423e-15 1 0 -1.08498301749423e-15 1 0 -1.08498301749423e-15 1 0 -1.08498301749423e-15 1</float_array>
+          <technique_common>
+            <accessor source="#representation-1306-normals-array" count="30" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="representation-1306-vertices">
+          <input semantic="POSITION" source="#representation-1306-positions"/>
+        </vertices>
+        <triangles material="IfcWall" count="18">
+          <input semantic="VERTEX" source="#representation-1306-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#representation-1306-normals" offset="1"/>
+          <p>0 0 2 2 3 3 0 0 3 3 1 1 5 5 4 4 6 6 5 5 6 6 7 7 9 9 7 7 8 8 9 9 5 5 7 7 14 14 11 11 10 10 14 14 15 15 11 11 12 12 14 14 10 10 13 13 14 14 12 12 16 16 18 18 19 19 17 17 19 19 20 20 17 17 16 16 19 19 21 21 23 23 24 24 21 21 24 24 22 22 29 29 25 25 27 27 29 29 27 27 28 28 26 26 25 25 29 29</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="IfcOpenShell">
+      <node id="product-5e31085c-4523-c900-840e-71a19c5d62d5-body" name="product-5e31085c-4523-c900-840e-71a19c5d62d5-body" type="NODE">
+        <matrix>0 -1 0 40.78234214563172 1 0 0 20.07358429719128 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#representation-1306">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="IfcWall" target="#IfcWall"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="product-5e31085c-4523-c900-840e-71a19c5d62d5-body" name="product-5e31085c-4523-c900-840e-71a19c5d62d5-body" type="NODE">
+        <matrix>0 -1 0 40.78234214563172 1 0 0 20.07358429719128 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#representation-1306">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="IfcWall" target="#IfcWall"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#IfcOpenShell"/>
+  </scene>
+</COLLADA>

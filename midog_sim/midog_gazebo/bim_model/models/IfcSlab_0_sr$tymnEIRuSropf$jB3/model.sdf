@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<sdf version = '1.5'>
+    <model name = "IfcSlab_0_sr$tymnEIRuSropf$jB3">
+        <static>True</static>
+        <self_collide>True</self_collide>
+        <enable_wind>True</enable_wind>
+        <pose>0 0 0 0 0 0</pose>
+
+        <link name = 'IfcSlab'>
+            <inertial>
+                <mass>1</mass>
+            </inertial>
+
+            <collision name='collision'>
+                <geometry>
+                    <mesh>
+                        <uri>model://IfcSlab_0_sr$tymnEIRuSropf$jB3//meshes//IfcSlab_0_sr$tymnEIRuSropf$jB3.dae</uri>
+                    </mesh>
+                </geometry>
+            </collision>
+
+            <visual name='visual'>
+                <geometry>
+                    <mesh>
+                        <uri>model://IfcSlab_0_sr$tymnEIRuSropf$jB3//meshes//IfcSlab_0_sr$tymnEIRuSropf$jB3.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+        </link>
+    </model>
+</sdf>
