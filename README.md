@@ -1,6 +1,6 @@
 # Instructions to run the code:
 
-## 1. Download and Install ROS web video server
+**1. Download and Install ROS web video server**
 
 **Install:**
 ```bash
